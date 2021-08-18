@@ -15,7 +15,7 @@ int main (){
         printf("%.2f, %.2f e %.2f formam um triângulo.",a,b,c);
     }
     else{
-        printf("Os valores digitados no formam um triângulo.");
+        printf("Os valores digitados não formam um triângulo.");
     }
     return 0;
 }
