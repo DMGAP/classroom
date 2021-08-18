@@ -13,7 +13,7 @@ void menor(){
         printf("\nDigite um valor inteiro para verificar : (0 sai da verificação)");
         scanf("%d",&n);
     }
-    printf("\n %d é o menor número digitado",n);
+    printf("\n %d é o menor número digitado",k);
 }
 
 int main () {
