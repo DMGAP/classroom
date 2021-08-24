@@ -28,7 +28,7 @@ int main(){
         break;
     
     default:
-        printf("O número digitado deve ser entre 0 e 5.\n");
+        printf("O número digitado deve é menor que 0 ou maior que cinco.\n");
         break;
     }
     return 0;

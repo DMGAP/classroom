@@ -10,7 +10,7 @@ void procrepet(){
         if (n>0 && n<5){
             printf("%d\n",n);
         }else{
-            printf("Entrada inválida.\n");
+            printf("Valor inválido.\n");
         }
         scanf("%d",&n); 
     }

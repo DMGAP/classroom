@@ -1,16 +1,20 @@
+//Algoritmo para receber 4 numeros inteiros e mostrar a soma
 #include<stdio.h>
 #include<locale.h>
-//Faça um programa que receba 4 números inteiros, calcule e mostre a soma destes números
-void soma (){
-    int a,b=0;
-    for (int i=0;i<4;i++){
-        printf("Digite um número inteiro: ");
-        scanf("%d",&a);
-        b+=a;
+
+int GetSomNum (){
+    int a,soma=0;
+    for (int i=1;i<=4;i++){
+        printf("Digite um número inteiro:\n");
+        scanf("%d", &a);
+        soma+=a;
     }
-    printf("A soma dos números é %d.",b);
+    return soma;
+
 }
+
 int main (){
-    setlocale(LC_ALL,"portuguese");
-    soma();
+    int b;
+    setlocale(LC_ALL, "portuguese");
+    printf("A soma dos quatro números digitados é : %d", GetSomNum());
 }
