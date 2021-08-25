@@ -3,10 +3,9 @@
 #include<locale.h>
 
 int Getnum(){
-    int num[100];
+    int num[100],j=0;
     for (int i=1;i<=100;i++){
-        printf("Digite um número para armazenar no %d º lugar:\n",i);
-        scanf("%d",&num[i]);
+        j+=i;
     }
 }
 
