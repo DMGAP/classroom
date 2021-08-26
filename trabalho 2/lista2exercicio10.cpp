@@ -13,13 +13,13 @@ int main (){
 
     for (int i = 0 ; i < 31 ; i++){ //inserir as temperaturas do mes de janeiro
         printf("Digite a temperatura em %d de Janeiro :\n", i+1);
-        scanf("%d",janeiro[i]);
+        scanf(" %d",&janeiro[i]);
         if (janeiro[i]>=15 && janeiro[i]<=40){a = true;}
         else{a=false;}
         while (a == false) {
             printf("O número digitado náo esta dentro da variação verificada.\n");
             printf("Digite a temperatura em %d de Janeiro:\n", i+1);
-            scanf("%d",janeiro[i]);
+            scanf(" %d",&janeiro[i]);
             if (janeiro[i]>=15 && janeiro[i]<=40){a = true;}
         }
         if (janeiro[i]>maior){maior = janeiro[i];}
@@ -29,14 +29,14 @@ int main (){
     
     for (int i = 0 ; i < 28 ; i++){ //inserir as temperaturas do mes de fevereiro
         printf("Digite a temperatura em %d de Fevereiro\n", i+1);
-        scanf("%d",fevereiro[i]);
+        scanf(" %d",fevereiro[i]);
         if (fevereiro[i]>=15 && fevereiro[i]<=40){a = true;}
         else{a=false;}
         while (a == false) {
             printf("O número digitado náo esta dentro da variação verificada.\n");
             printf("Digite a temperatura em fevereiro %d:\n", i+1);
-            scanf("%d",fevereiro[i]);
-            if (janeiro[i]>=15 && janeiro[i]<=40){a = true;}
+            scanf(" %d",&fevereiro[i]);
+            if (fevereiro[i]>=15 && fevereiro[i]<=40){a = true;}
         }
         if (fevereiro[i]>maior){maior = fevereiro[i];}
         if (fevereiro[i]<menor){maior = fevereiro[i];}
@@ -45,14 +45,14 @@ int main (){
 
     for (int i = 0 ; i < 31 ; i++){ //inserir as temperaturas do mes de marco
         printf("Digite a temperatura em %d de Marco:\n", i+1);
-        scanf("%d",marco[i]);
+        scanf(" %d",marco[i]);
         if (marco[i]>=15 && marco[i]<=40){a = true;}
         else{a=false;}
         while (a == false) {
             printf("O número digitado náo esta dentro da variação verificada.\n");
             printf("Digite a temperatura em %d de Marco:\n", i+1);
-            scanf("%d",marco[i]);
-            if (janeiro[i]>=15 && janeiro[i]<=40){a = true;}
+            scanf(" %d",&marco[i]);
+            if (marco[i]>=15 && marco[i]<=40){a = true;}
         }
         if (marco[i]>maior){maior = marco[i];}
         if (marco[i]<menor){maior = marco[i];}
@@ -61,14 +61,14 @@ int main (){
 
     for (int i = 0 ; i < 31 ; i++){ //inserir as temperaturas do mes de abril
         printf("Digite a temperatura em %d de Abril:\n", i+1);
-        scanf("%d",abril[i]);
+        scanf(" %d",&abril[i]);
         if (abril[i]>=15 && abril[i]<=40){a = true;}
         else{a=false;}
         while (a == false) {
             printf("O número digitado náo esta dentro da variação verificada.\n");
             printf("Digite a temperatura em %d de Abril:\n", i+1);
-            scanf("%d",abril[i]);
-            if (janeiro[i]>=15 && janeiro[i]<=40){a = true;}
+            scanf(" %d",&abril[i]);
+            if (abril[i]>=15 && abril[i]<=40){a = true;}
         }
         if (abril[i]>maior){maior = abril[i];}
         if (abril[i]<menor){maior = abril[i];}
