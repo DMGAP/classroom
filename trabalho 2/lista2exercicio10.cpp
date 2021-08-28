@@ -1,10 +1,9 @@
 //armazenar temperatura de janeiro a abril, calcular e imprimir menor, maior, quantos dias a temperatura foi menor que a media
 #include<stdio.h>
 #include<locale.h>
-#include<stdbool.h>
 
 int main (){
-    float janeiro[31], fevereiro[3], marco[31], abril[30], media = 0, menor = 40, maior = 15, soma = 0;
+    float janeiro[31], fevereiro[28], marco[31], abril[30], media = 0, menor = 40, maior = 15, soma = 0;
     int mmenor = 0;
     bool a;
     setlocale(LC_ALL,"portuguese");
@@ -79,7 +78,7 @@ int main (){
 
     for (int i = 0 ; i < 31 ; i++){ //Contagem de quantos dias a temperatura foi menor que a média
         if (janeiro[i]<media){mmenor++;}
-        if (i < 3){
+        if (i < 28){
             if (fevereiro[i]<media){mmenor++;}
         }
         if (marco[i]<media){mmenor++;}
