@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<locale.h>
+#include<stdlib.h>
+
 void Transformm (){
     float n;
     printf("Esse programa transforma um número qualquer de metros para decímetros, centímetros e milímetros.\n");
@@ -154,6 +156,7 @@ int main(){
         
         default:
             printf("Volte sempre !");
+            exit;
             break;
     }
     
