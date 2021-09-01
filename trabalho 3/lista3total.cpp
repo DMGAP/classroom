@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<locale.h>
-#include<stdlib.h>
 
 void Transformm (){
     float n;
@@ -154,9 +153,9 @@ int main(){
             }
             break;
         
-        default:
+        case 0:
             printf("Volte sempre !");
-            exit;
+            return 0;
             break;
     }
     
