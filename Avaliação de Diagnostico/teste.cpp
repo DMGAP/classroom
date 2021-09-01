@@ -1,20 +1,26 @@
 #include<stdio.h>
-int matriz(int *m[4][4]) {
-    for (int i=0;i<4;i++){
-       for (int j=0;j<4;j++){
-        printf("digite um número:");
-        scanf("%d",&m[i][j]);
-        printf("\n%d",&m);
-        }   
-    }
-};
+#include<string.h>
 
-int main (){
-    int m[4][4],i,j;
-    for (int i=0;i<4;i++){
-       for (int j=0;j<4;j++){
-            matriz(&m[i][j]);
+main() {
+    char vet[15] = "corrobora", temp;
+    int i, j;
+
+    
+    for (i=0;i<strlen(vet);i++) {
+        for(j=0;j<strlen(vet) - 1; j++) {
+            if(vet[j] > vet[j+1]) {
+                temp = vet[j];
+                vet[j] = vet[j+1];
+                vet[j+1] = temp;
+            }
         }
+        for (int k=0;k<strlen(vet);k++) {
+        printf("%c", vet[k]);       
+        }
+         printf("\n");
     }
-
+    for (i=0;i<strlen(vet);i++) {
+        printf("%c", vet[i]);
+    }
+    printf("\n\n");
 }
