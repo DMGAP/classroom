@@ -72,6 +72,6 @@ int main (){
             Divisao(&N1, &N2, &b);
             printf("%.2f",b);
         break;
-
+        
     }
 }
