@@ -1,16 +1,32 @@
 #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<stdbool.h>
 
-int Soma_mais_um (int *a){
-    *a = *a + 1;
-    printf("O valor dentro da funcao e: %d\n",*a);
-    return *a;
-}
-
-int main() {
-    int n1=0,n2;
-    printf("O valor de n antes da funcao e: %d\n",n1);
-    n2=Soma_mais_um(&n1);
-    printf("O valor de n depois da funcao e: %d\n",n1);
-    printf("O valor de n depois da funcao e: %d\n",n2);
+main() {
+    char vet[15] = "PROGRAMACAO", temp, aux[15] ;//PRGO
+    int i, j, a;
     
+
+    
+    for (i=0;i<strlen(vet);i++) {
+        aux[15] = vet[15];
+        for(j=0;j<strlen(vet) - 1; j++) {
+            if(vet[j] > vet[j+1]) {
+                temp = vet[j];
+                vet[j] = vet[j+1];
+                vet[j+1] = temp;
+            }
+        }
+        
+        if (vet[strlen(vet)] == aux[strlen(vet)]) {
+            i = 15;
+            j = 15;
+        }
+        //printf("%s\n", vet);
+    }
+    for (i=0;i<strlen(vet);i++) {
+        printf("%c", vet);
+    }
+    printf("\n\n");
 }

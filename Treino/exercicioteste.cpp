@@ -1,7 +1,6 @@
 // Calculadora com passagem de parametro e com retorno
 #include<stdio.h>
 #include<locale.h>
-#include<cmath>
 
  int Soma (int *n1, int *n2, int *x){
     printf("A soma de %d e %d é:\n" , *n1 , *n2 );
