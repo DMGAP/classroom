@@ -1,9 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string>
 #define max 8
 
 main (){
-    int vet[10] = {256,38,48,18,36,8,18,23}, min , aux ;
+    char vet[50] = {professor}, min , aux ;
 
     /*for (int i = 0 ; i < max ; i++){
         vet[i] = 1 + rand() % 60;

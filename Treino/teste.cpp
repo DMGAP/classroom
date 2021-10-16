@@ -4,19 +4,15 @@
 #include<stdbool.h>
 
 
-struct tipoteste{
-    int programacao = 50;
-};
+
 
 main() {
     char vet[15] = "PROGRAMACAO", temp, aux[15] ;//PRGO
     int i, j, a;
-    tipoteste teste;
-
-    aux=({}[{}].{}),teste;
+    
 
     
-    /*for (i=0;i<strlen(vet);i++) {
+    for (i=0;i<strlen(vet);i++) {
         aux[15] = vet[15];
         for(j=0;j<strlen(vet) - 1; j++) {
             if(vet[j] > vet[j+1]) {
@@ -30,11 +26,11 @@ main() {
             i = 15;
             j = 15;
         }
-        //printf("%s\n", vet);
+        printf("%s\n", vet);
     }
     for (i=0;i<strlen(vet);i++) {
         printf("%c", vet);
     }
-    printf("\n\n");*/
+    printf("\n\n");
 
 }

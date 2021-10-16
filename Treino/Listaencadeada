@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<string>
+#include<stdlib.h>
+using namespace std;
+
+typedef struct TipoCelula *Apontador;
+
+struct TipoItem{
+    int codigo;
+    char nome[40];
+};
+
+typedef struct TipoCelula {
+    TipoItem Item;
+    Apontador Prox;
+
+}Celula;
+
+struct TipoLista {
+    Apontador Primeiro;
+    Apontador Ultimo;
+};
+
+void FazListaVazia (struct TipoLista *Lista){
+    Lista -> Primeiro = (Apontador) malloc (sizeof (Celula));
+    Lista -> Ultimo = Lista -> Primeiro;
+    Lista -> Primeiro -> Prox = NULL;
+}
+
+Apontador RetornaPonteiroParaUmaCelulaDaLista (TipoLista Lista, int posicao){
+    
+}
+//Comandos na lista
+
+void InserirNaLista (TipoItem X, TipoLista *Lista){
+    Lista -> Ultimo -> Prox = (Apontador) malloc (sizeof(Celula));
+    Lista -> Ultimo = Lista -> Ultimo -> Prox;
+    Lista -> Ultimo -> Item = X;
+    Lista -> Ultimo -> Prox = NULL;
+}
+
+
+int Menu (){
+    int Opcao = 5;
+    do{
+        system("CLS");
+        printf("Escolha uma opcao:\n "
+        "1 se deseja inserir valores na tabela. \n"
+        "2 se deseja excluir valores da tabela. \n"
+        "3 se deseja alterar valores da tabela. \n"
+        "4 se deseja imprimir valores da tabela. \n"
+        "0 se deseja sair do programa.\n"
+        "Opcao :");
+        scanf("%d" , &Opcao);
+        if (Opcao == 0){exit;}
+    }while (Opcao >=0 && Opcao <= 4);
+    return (Opcao);
+}
+
+int main (){
+    TipoLista Lista;
+    TipoItem Aux;
+    Apontador P;
+
+    int opcao, posicao = 0;
+
+    FazListaVazia (&Lista);
+    opcao = Menu();
+    while (1){
+        switch (opcao){
+            case 1:
+                printf("inserir itens:\n\n");
+                printf("Digite o codigo da pessoa (numeros inteiros):\n");
+                scanf("%d" , &Aux.codigo);
+                printf("Digite o nome da pessoa :\n");
+                scanf("%s" , &Aux.nome);
+
+                InserirNaLista (Aux , &Lista);
+
+                break;
+            
+        
+            case 2:
+                printf("Excluir Iten.\n\n");
+                printf("Digite o codigo do item que deseja excluir :\n");
+                scanf("%d" , &Aux.codigo);
+                printf("Qual registro voce deseaja excluir ? (Insira a posicao)\n");
+                scanf("%d" , &posicao);
+                P = RetornaPonteiroParaUmaCelulaDaLista(Lista , posicao);
+            break;
+        
+        default:
+            break;
+        }
+    }
+}
