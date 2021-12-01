@@ -6,8 +6,9 @@
 #include <locale.h>
 #include <chrono>
 #include <iostream>
+
 #define MAX 5000
-#define MAXLETRAS 30
+#define MAXLETRAS 20
 
 using namespace std;
 
@@ -15,7 +16,7 @@ using namespace std::chrono;
 
 typedef struct
 {
-    char sort[MAXLETRAS];   
+    char sort[MAXLETRAS];
     double tempo[10];
 }Dados;
 
@@ -196,8 +197,6 @@ int main(){
 
     int n = 499 , j ; // quantidade de números que serao inseridos nas ordenaçoes e variável que percorre a futura matriz mais rapido
 
-    std::chrono::time_point<std::chrono::system_clock> comeco, fim; //declaração das variáveis de tempo
-
     Dados lista[6]; //declaração da lista com 6 espaços
 
     const string cabecalho[] = {"Ordenacao" , "500" , "1000" , "1500" , "2000" , "2500" , "3000" , "3500" , "4000" , "4500" , "5000"};
@@ -208,64 +207,70 @@ int main(){
     strcpy(lista[3].sort, "Selectionsort");
     strcpy(lista[4].sort, "Shellsort");
     strcpy(lista[5].sort, "Heapsort");
-    
-    
 
     //Cronometragem das funçõess de ordenação e armazenamento dos tempos no vetor da struct
 
     for ( int i = 0 ; i < 10 ; i++)
     {   
-        j=0;//reseta o valor do j
+        j = 0;//reseta o valor do j
 
 
-        auto comeco = system_clock::now(); //inicio da cronometragem
+        auto start1 = high_resolution_clock::now(); //inicio da cronometragem
         Bubblesort(allValues , n); //execução da ordenação com n valores
-        auto fim = system_clock::now(); //pausa na cronometragem
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count(); //armazenamento da variação de tempo em milisegundos na struct
+        auto end1 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration1 = duration_cast<microseconds>(end1 - start1); // calculo da variação de tempo
+        lista[j].tempo[i] = duration1.count(); //armazenamento da variação de tempo em microsegundos para a struct
         j++;//j=1
+        
 
-        auto comeco = system_clock::now(); //inicio da cronometragem
+        auto start2 = high_resolution_clock::now(); //inicio da cronometragem
         Insertionsort(allValues , n); //execução da ordenação com n valores
-        auto fim = system_clock::now(); //pausa na cronometragem
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count(); //armazenamento da variação de tempo em milisegundos na struct
+        auto end2 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration2 = duration_cast<microseconds>(end2 - start2); // calculo da variação de tempo
+        lista[j].tempo[i] = duration2.count(); //armazenamento da variação de tempo em microsegundos para a struct
         j++;//j=2
 
-        auto comeco = system_clock::now(); //inicio da cronometragem
+        auto start3 = high_resolution_clock::now(); //inicio da cronometragem
         Quicksort(allValues , 0 , n - 1); //execução da ordenação com n valores
-        auto fim = system_clock::now(); //pausa na cronometragem
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count();
+        auto end3 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration3 = duration_cast<microseconds>(end3 - start3); // calculo da variação de tempo
+        lista[j].tempo[i] = duration3.count(); //armazenamento da variação de tempo em microsegundos para a struct
         j++;//j=3
 
-        auto comeco = system_clock::now(); //inicio da cronometragem
+        auto start4 = high_resolution_clock::now(); //inicio da cronometragem
         Selectionsort(allValues , n); //execução da ordenação com n valores
-        auto fim = system_clock::now(); //pausa na cronometragem
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count(); //armazenamento da variação de tempo em milisegundos na struct
+        auto end4 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration4 = duration_cast<microseconds>(end4 - start4); // calculo da variação de tempo
+        lista[j].tempo[i] = duration4.count(); //armazenamento da variação de tempo em microsegundos para a struct
         j++;//j=4
 
-        auto comeco = system_clock::now(); //inicio da cronometragem
+        auto start5 = high_resolution_clock::now(); //inicio da cronometragem
         Shellsort(allValues , n); //execução da ordenação com n valores
-        auto fim = system_clock::now();
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count(); //armazenamento da variação de tempo em milisegundos na struct
+        auto end5 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration5 = duration_cast<microseconds>(end5 - start5); // calculo da variação de tempo
+        lista[j].tempo[i] = duration5.count(); //armazenamento da variação de tempo em microsegundos para a struct
         j++;//j=5
 
-        auto comeco = system_clock::now();
+        auto start6 = high_resolution_clock::now(); //inicio da cronometragem
         Heapsort(allValues, n); //execução da ordenação com n valores
-        auto fim = system_clock::now();
-        lista[j].tempo[i] = chrono::duration_cast<milliseconds>(fim - comeco).count(); //armazenamento da variação de tempo em milisegundos na struct
+        auto end6 = high_resolution_clock::now(); //pausa na cronometragem
+        auto duration6 = duration_cast<microseconds>(end6 - start6); // calculo da variação de tempo
+        lista[j].tempo[i] = duration6.count(); //armazenamento da variação de tempo em microsegundos para a struct
         
         n+=500;//n começa com 499 e vai ate 4999
     }
 
+    printf("Esse algoritmo pega uma quantidade de numeros de um arquivo, calcula o tempo em microsegundos que cada um dos tipos\nde ordenação demora pra realizar a ordenação e faz uma tabela com diferentes amostras.\n");
     //inicio da apresentaçao da tabela
     
     //cabeçalho
-    printf("%*s%10s%10s%10s%10s%10s%10s%10s%10s%10s%10s", -MAXLETRAS , cabecalho[0].c_str() , cabecalho[1].c_str() , cabecalho[2].c_str() , cabecalho[3].c_str() , cabecalho[4].c_str() , cabecalho[5].c_str() , cabecalho[6].c_str() , cabecalho[7].c_str() , cabecalho[8].c_str() , cabecalho[9].c_str() , cabecalho[10].c_str());  
+    printf("%*s%15s%15s%15s%15s%15s%15s%15s%15s%15s%15s\n", -MAXLETRAS , cabecalho[0].c_str() , cabecalho[1].c_str() , cabecalho[2].c_str() , cabecalho[3].c_str() , cabecalho[4].c_str() , cabecalho[5].c_str() , cabecalho[6].c_str() , cabecalho[7].c_str() , cabecalho[8].c_str() , cabecalho[9].c_str() , cabecalho[10].c_str());  
     
     //restante das tabela
 
     for ( int i = 0 ; i < 6 ; i++)
     {
-        printf("%*s%10d%10d%10d%10d%10d%10d%10d%10d%10d%10d", -MAXLETRAS , lista[i].sort , lista[0].tempo[i] , lista[1].tempo[i] , lista[2].tempo[i] , lista[3].tempo[i] , lista[4].tempo[i] , lista[5].tempo[i] , lista[6].tempo[i] , lista[7].tempo[i] , lista[8].tempo[i] , lista[9].tempo[i] );
+        printf("%*s%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf%15.0lf\n", -MAXLETRAS , lista[i].sort , lista[i].tempo[0] , lista[i].tempo[1] , lista[i].tempo[2] , lista[i].tempo[3] , lista[i].tempo[4] , lista[i].tempo[5] , lista[i].tempo[6] , lista[i].tempo[7] , lista[i].tempo[8] , lista[i].tempo[9] );
     }
 
     return 0;
