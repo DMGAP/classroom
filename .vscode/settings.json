@@ -3,6 +3,15 @@
         "lista2exercicio12": "cpp",
         "lista5exe2": "cpp",
         "listaencadeada": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "stdio.h": "c",
+        "xstring": "cpp",
+        "chrono": "cpp",
+        "iomanip": "cpp",
+        "iterator": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp"
     }
 }
