@@ -1,43 +1,23 @@
-// C++ program to find out execution time of
-// of functions
-#include <algorithm>
-#include <chrono>
-#include <iostream>
-#include<vector>
-using namespace std;
-using namespace std::chrono;
-  
-// For demonstration purpose, we will fill up
-// a vector with random integers and then sort
-// them using sort function. We fill record
-// and print the time required by sort function
-int main()
-{
-  
-    vector<int> values(10000);
-  
-    // Generate Random values
-    auto f = []() -> int { return rand() % 10000; };
-  
-    // Fill up the vector
-    generate(values.begin(), values.end(), f);
-  
-    // Get starting timepoint
-    auto start = high_resolution_clock::now();
-  
-    // Call the function, here sort()
-    sort(values.begin(), values.end());
-  
-    // Get ending timepoint
-    auto stop = high_resolution_clock::now();
-  
-    // Get duration. Substart timepoints to 
-    // get durarion. To cast it to proper unit
-    // use duration cast method
-    auto duration = duration_cast<microseconds>(stop - start);
-  
-    cout << "Time taken by function: "
-         << duration.count() << " microseconds" << endl;
-  
-    return 0;
+#include<stdio.h>
+// Esta função recebe um inteiro x
+// e um vetor crescente v[0..n-1]
+// e devolve um índice j em 0..n 
+// tal que v[j-1] < x <= v[j].
+
+int 
+buscaBinaria (int x, int n, int v[]) { 
+   int e = -1, d = n; // atenção!
+   while (e < d-1) {  
+      int m = (e + d)/2;
+      if (v[m] < x) e = m;
+      else d = m; 
+   }
+   return d;
+}
+
+int main (){
+    int a[] = {23,27,29,37,42,49,53,70,81};
+    int b;
+    b = buscaBinaria(23,81,a);
+    printf("%d",b);
 }
